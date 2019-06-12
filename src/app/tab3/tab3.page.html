@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+    <ion-grid>
 
-<ion-content></ion-content>
+        <ion-row>
+            <ion-col>
+                <ion-card class="reminders">
+                    <div *ngIf="1==0">
+                        <ion-list *ngFor="let item of items">
+                            <ion-item>
+                                <ion-label>{{item}}</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+    <ion-row>
+        <ion-card class="weather">
+            <ion-input placeholder="Your city"></ion-input>
+        </ion-card>
+    </ion-row>
+    </ion-grid>
+</ion-content>
