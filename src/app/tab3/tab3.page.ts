@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoistService } from '../services/todoist.service';
 
 @Component({
     selector: 'app-tab3',
@@ -7,10 +8,24 @@ import { Component } from '@angular/core';
   })
   export class Tab3Page {
 
+    apiKey: string;
+
     items: string[];
 
-      constructor(){}
-      ngOnInit(){
-          this.items = ['a','b','c','d']
-      }
+    isApiKey: boolean;
+
+    constructor(private toDoIstService: TodoistService){}
+
+    ngOnInit(){
+        this.items = ['a','b','c','d']
+    }
+
+    authenticateToToDoIst() {
+      this.toDoIstService.setApiKey(this.apiKey);
+      this.toDoIstService.isApiKeyGood();
+    }
+
+    isApiKeyGood() {
+    }
+
   }
